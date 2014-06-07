@@ -77,7 +77,7 @@ For detail, see `comment-dwim'.  The ARG passed to `comment-dwim' function."
   `(;; keywords
     (,gold-keywords . font-lock-keyword-face)
     ;; {{}}'s face
-    (,"{{\\.?\\(\\w\\| \\|_\\|-\\)*}}" . font-lock-preprocessor-face)
+    (,"{{\\.?\\(\\w\\|\\.\\| \\|_\\|-\\)*}}" . font-lock-preprocessor-face)
     ;; doctype
     (,"!!!\\|doctype\\( ?[A-Za-z0-9\-\_]*\\)?" 0 font-lock-comment-face)
     ;; id
