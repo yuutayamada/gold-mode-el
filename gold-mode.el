@@ -38,6 +38,8 @@
 (require 'font-lock)
 (require 'sws-mode)
 
+(defvar good-mode-hook '() "Hook for gold-mode.")
+
 (defun gold-debug (string &rest args)
   "Prints a debug message with STRING and ARGS."
   (apply 'message (append (list string) args)))
@@ -137,7 +139,8 @@ For detail, see `comment-dwim'.  The ARG passed to `comment-dwim' function."
   ;; modify the keymap
   (define-key gold-mode-map [remap comment-dwim] 'gold-comment-dwim)
   ;; highlight syntax
-  (setq font-lock-defaults '(gold-font-lock-keywords)))
+  (setq font-lock-defaults '(gold-font-lock-keywords))
+  (run-mode-hooks 'gold-mode-hook))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.gold$" . gold-mode))
