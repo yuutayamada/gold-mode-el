@@ -70,7 +70,7 @@ For detail, see `comment-dwim'.  The ARG passed to `comment-dwim' function."
   (eval-when-compile
     (concat "^[    ]+"
             (regexp-opt
-             '("block" "extends") 'words)))
+             '("include" "style" "javascript" "block" "extends") 'words)))
   "Gold keywords.")
 
 (defvar gold-font-lock-keywords
